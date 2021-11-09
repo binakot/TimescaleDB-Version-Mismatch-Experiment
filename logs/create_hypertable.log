@@ -1,0 +1,25 @@
+2021-11-09T18:20:46.437970192Z CREATE TABLE
+2021-11-09T18:20:46.498615715Z 2021-11-09 18:20:46.498 UTC [99] WARNING:  remote PostgreSQL instance has an outdated timescaledb extension version
+2021-11-09T18:20:46.498655331Z 2021-11-09 18:20:46.498 UTC [99] DETAIL:  Access node version: 2.5.0, remote version: 2.0.2.
+2021-11-09T18:20:46.498686361Z WARNING:  remote PostgreSQL instance has an outdated timescaledb extension version
+2021-11-09T18:20:46.498714752Z DETAIL:  Access node version: 2.5.0, remote version: 2.0.2.
+2021-11-09T18:20:46.511255804Z 2021-11-09 18:20:46.511 UTC [99] WARNING:  remote PostgreSQL instance has an outdated timescaledb extension version
+2021-11-09T18:20:46.511287043Z 2021-11-09 18:20:46.511 UTC [99] DETAIL:  Access node version: 2.5.0, remote version: 2.1.1.
+2021-11-09T18:20:46.511326656Z WARNING:  remote PostgreSQL instance has an outdated timescaledb extension version
+2021-11-09T18:20:46.511367444Z DETAIL:  Access node version: 2.5.0, remote version: 2.1.1.
+2021-11-09T18:20:46.526857716Z 2021-11-09 18:20:46.526 UTC [99] WARNING:  remote PostgreSQL instance has an outdated timescaledb extension version
+2021-11-09T18:20:46.526899093Z 2021-11-09 18:20:46.526 UTC [99] DETAIL:  Access node version: 2.5.0, remote version: 2.2.1.
+2021-11-09T18:20:46.526876655Z WARNING:  remote PostgreSQL instance has an outdated timescaledb extension version
+2021-11-09T18:20:46.526921183Z DETAIL:  Access node version: 2.5.0, remote version: 2.2.1.
+2021-11-09T18:20:46.537296080Z 2021-11-09 18:20:46.537 UTC [99] WARNING:  remote PostgreSQL instance has an outdated timescaledb extension version
+2021-11-09T18:20:46.537338694Z 2021-11-09 18:20:46.537 UTC [99] DETAIL:  Access node version: 2.5.0, remote version: 2.3.1.
+2021-11-09T18:20:46.537297236Z WARNING:  remote PostgreSQL instance has an outdated timescaledb extension version
+2021-11-09T18:20:46.537358097Z DETAIL:  Access node version: 2.5.0, remote version: 2.3.1.
+2021-11-09T18:20:46.552228640Z 2021-11-09 18:20:46.552 UTC [99] WARNING:  remote PostgreSQL instance has an outdated timescaledb extension version
+2021-11-09T18:20:46.552261620Z 2021-11-09 18:20:46.552 UTC [99] DETAIL:  Access node version: 2.5.0, remote version: 2.4.2.
+2021-11-09T18:20:46.552241576Z WARNING:  remote PostgreSQL instance has an outdated timescaledb extension version
+2021-11-09T18:20:46.552276345Z DETAIL:  Access node version: 2.5.0, remote version: 2.4.2.
+2021-11-09T18:20:46.716088300Z  hypertable_id | schema_name | table_name  | created
+2021-11-09T18:20:46.716133725Z ---------------+-------------+-------------+---------
+2021-11-09T18:20:46.716148063Z              1 | public      | sensor_data | t
+2021-11-09T18:20:46.716158281Z (1 row)

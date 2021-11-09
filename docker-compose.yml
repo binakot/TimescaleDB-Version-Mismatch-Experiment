@@ -1,0 +1,113 @@
+version: '3'
+
+networks:
+  overlay:
+
+services:
+  pg_access_node:
+    image: timescale/timescaledb:2.5.0-pg14
+    container_name: pg_access_node
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5432:5432'
+    networks:
+      - overlay
+    volumes:
+      - ./trust-all.sh:/docker-entrypoint-initdb.d/666_trust.sh
+      - ./init-access-node.sh:/docker-entrypoint-initdb.d/999_init.sh
+
+  pg_data_node_1:
+    image: timescale/timescaledb:2.4.0-pg12
+    container_name: pg_data_node_1
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5433:5432'
+    networks:
+      - overlay
+    volumes:
+      - ./trust-all.sh:/docker-entrypoint-initdb.d/666_trust.sh
+      - ./init-data-node.sh:/docker-entrypoint-initdb.d/999_init.sh
+
+  pg_data_node_2:
+    image: timescale/timescaledb:2.4.1-pg12
+    container_name: pg_data_node_2
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5434:5432'
+    networks:
+      - overlay
+    volumes:
+      - ./trust-all.sh:/docker-entrypoint-initdb.d/666_trust.sh
+      - ./init-data-node.sh:/docker-entrypoint-initdb.d/999_init.sh
+
+  pg_data_node_3:
+    image: timescale/timescaledb:2.4.2-pg12
+    container_name: pg_data_node_3
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5435:5432'
+    networks:
+      - overlay
+    volumes:
+      - ./trust-all.sh:/docker-entrypoint-initdb.d/666_trust.sh
+      - ./init-data-node.sh:/docker-entrypoint-initdb.d/999_init.sh
+
+  pg_data_node_4:
+    image: timescale/timescaledb:2.4.2-pg13
+    container_name: pg_data_node_4
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5436:5432'
+    networks:
+      - overlay
+    volumes:
+      - ./trust-all.sh:/docker-entrypoint-initdb.d/666_trust.sh
+      - ./init-data-node.sh:/docker-entrypoint-initdb.d/999_init.sh
+
+  pg_data_node_5:
+    image: timescale/timescaledb:2.5.0-pg14
+    container_name: pg_data_node_5
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - '5437:5432'
+    networks:
+      - overlay
+    volumes:
+      - ./trust-all.sh:/docker-entrypoint-initdb.d/666_trust.sh
+      - ./init-data-node.sh:/docker-entrypoint-initdb.d/999_init.sh
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pgadmin
+    restart: unless-stopped
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    ports:
+      - '15432:80'
+    networks:
+      - overlay
